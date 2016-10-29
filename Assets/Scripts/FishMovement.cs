@@ -15,6 +15,7 @@ public class FishMovement : EnemyMovement {
     if (side == 0) {
       movement.direction = new Vector3(Random.Range(10, 50), Random.Range(-5, 5), 0);
     } else {
+			GetComponent<SpriteRenderer>().flipX = true;
       movement.direction = new Vector3(Random.Range(-50, -10), Random.Range(-5, 5), 0);
     }
     movement.direction.Normalize();

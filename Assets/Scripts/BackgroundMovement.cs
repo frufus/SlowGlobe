@@ -15,7 +15,7 @@ public class BackgroundMovement : MonoBehaviour
     public float speed;
     public float SpriteHight;
     private Sprite spriteOne;
-
+    private bool canSpawnClouds = false;
 	float offset = 0.75f;
 	GameObject[] Layer1;
 	GameObject[] Layer2;
@@ -60,6 +60,7 @@ public class BackgroundMovement : MonoBehaviour
 
     private void chooseEnemyKind(GameObject BackGroundGO)
     {
+        Debug.Log("CurrentStage: " + currentStage);
         if (currentStage <= GameController.Instance.DeepSeaNumber)
         {
             if (BackGroundSprites.Count != 0)
@@ -73,7 +74,7 @@ public class BackgroundMovement : MonoBehaviour
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[1];
             fishController.GetComponent<EnemyController>().EnableEnemies();
         }
-        else if (currentStage <= GameController.Instance.MidseeNumber && currentStage > GameController.Instance.MidToSee)
+        else if (currentStage <= GameController.Instance.MidseeNumber && currentStage > GameController.Instance.DeepToMid)
         {
             if (BackGroundSprites.Count != 0)
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[2];
@@ -101,7 +102,9 @@ public class BackgroundMovement : MonoBehaviour
         {
             if (BackGroundSprites.Count != 0)
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[6];
-            thunderController.GetComponent<EnemyController>().EnableEnemies();
+            if(canSpawnClouds)
+                thunderController.GetComponent<EnemyController>().EnableEnemies();
+            canSpawnClouds = true;
         }
 
         else if (currentStage == GameController.Instance.SkyeToSpaceNumber)

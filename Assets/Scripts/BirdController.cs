@@ -25,7 +25,6 @@ public class BirdController : MonoBehaviour {
   // Use this for initialization
   void Start () {
     CreateBirds();
-    InvokeRepeating("EnableBirds", spawnTime, spawnTime);
     EnableBirds();
   }
 
@@ -44,6 +43,10 @@ public class BirdController : MonoBehaviour {
 
   public void EnableBirds()
   {
+    InvokeRepeating("SpawnBirds", spawnTime, spawnTime);
+  }
+
+  private void SpawnBirds() {
     rndNumberOfEnemyBirds = Random.Range(0, 5);
     int count = 0;
     for (int i = 0; i < EnemyBirds.Count; i++)

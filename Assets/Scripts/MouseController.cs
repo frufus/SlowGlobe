@@ -45,7 +45,7 @@ public class MouseController : MonoBehaviour {
 				if (rightMouseDown) {
 					mod = 1.5f;
 				}
-				if (slowmoTime > 1) {
+				if (slowmoTime > 0) {
 					col.GetComponent<MovementBehaviour>().speed = col.GetComponent<MovementBehaviour>().speed*mod;
 					col.GetComponent<SpriteRenderer>().color = Color.blue;
 					slowmoTime -= slowmoCostPerTick;

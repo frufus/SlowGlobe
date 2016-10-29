@@ -19,6 +19,11 @@ public class MouseController : MonoBehaviour {
 		if (Input.GetMouseButtonUp(0)) {
 			mouseDown = false;
 		}
+		
+		Vector3 wm = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		GameObject hl = GameObject.Find("highlight");
+		hl.transform.position = new Vector3(wm.x, wm.y, 0);
+
 		List<GameObject> enemies = BirdController.Instance.EnemyBirds;
         foreach (GameObject go in enemies) {
 			go.GetComponent<SpriteRenderer>().color = Color.white;
@@ -26,7 +31,6 @@ public class MouseController : MonoBehaviour {
 		}
 
 		if (mouseDown) {
-			Vector3 wm = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D[] hitColliders = Physics2D.OverlapCircleAll(new Vector2(wm.x, wm.y), 1);
 			foreach (Collider2D col in hitColliders) {
 				col.GetComponent<EnemyMovement>().speed = col.GetComponent<EnemyMovement>().speed*0.4f;

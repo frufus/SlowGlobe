@@ -32,7 +32,7 @@ public class BackgroundMovement : MonoBehaviour
         BackGroundTwo.transform.Translate(Vector3.down * speed);
         if (BackgroundOne.transform.position.y + SpriteHight/2 < BorderDown.transform.position.y)
         {
-            BackgroundOne.transform.position = new Vector3(BackgroundOne.transform.position.x, BackGroundTwo.transform.position.y + SpriteHight * 0.75f, 0);
+            BackgroundOne.transform.position = new Vector3(BackgroundOne.transform.position.x, BackGroundTwo.transform.position.y + SpriteHight * 0.88f, 0);
             BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
             BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
         }
@@ -40,7 +40,7 @@ public class BackgroundMovement : MonoBehaviour
         {
             BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
             BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
-            BackGroundTwo.transform.position = new Vector3(BackGroundTwo.transform.position.x, (BackgroundOne.transform.position.y + SpriteHight * 0.75f), 0);
+            BackGroundTwo.transform.position = new Vector3(BackGroundTwo.transform.position.x, (BackgroundOne.transform.position.y + SpriteHight * 0.88f), 0);
         }
 
     }

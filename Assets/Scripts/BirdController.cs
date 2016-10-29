@@ -48,10 +48,15 @@ public class BirdController : MonoBehaviour {
 
   private void SpawnBirds() {
     rndNumberOfEnemyBirds = Random.Range(0, 5);
+    print(rndNumberOfEnemyBirds);
     int count = 0;
     for (int i = 0; i < EnemyBirds.Count; i++)
     {
       if (!EnemyBirds[i].activeInHierarchy) {
+        if (count == rndNumberOfEnemyBirds) {
+          break;
+        }
+
         Vector3 cp;
         if (EnemyBirds[i].GetComponent<EnemyMovement>().side == 0) {
           cp = new Vector3(0, Random.Range(Screen.height*2/3, Screen.height), 0);
@@ -63,9 +68,6 @@ public class BirdController : MonoBehaviour {
         EnemyBirds[i].transform.position = wp;
         EnemyBirds[i].SetActive(true);
         count++;
-        if (count == rndNumberOfEnemyBirds) {
-          break;
-        }
       }
     }
   }

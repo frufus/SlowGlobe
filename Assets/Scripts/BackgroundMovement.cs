@@ -7,10 +7,7 @@ public class BackgroundMovement : MonoBehaviour
 
     public List<Sprite> BackGroundSprites;
     public GameObject BackgroundOne;
-    public GameObject BackGroundTwo;
-    
-	public GameObject BackgroundOne;
-	public GameObject BackgroundTwo;
+    public GameObject BackgroundTwo;
 	public GameObject BackgroundThree;
 	public GameObject BackgroundFour;
 	public GameObject BackgroundFive;
@@ -18,16 +15,10 @@ public class BackgroundMovement : MonoBehaviour
     public float speed;
     public float SpriteHight;
     private Sprite spriteOne;
-    int backgroundlayer = -4;
-    int foregroundlayer = -3;
+
 	float offset = 0.75f;
 	GameObject[] Layer1;
 	GameObject[] Layer2;
-
-  
-    
-    int backgroundlayer = -2;
-    int foregroundlayer = -1;
 
     private GameObject fishController;
     private GameObject thunderController;
@@ -66,6 +57,8 @@ public class BackgroundMovement : MonoBehaviour
 		BackgroundThree.GetComponent<SpriteRenderer> ().sortingOrder = -1;
 		BackgroundFour.GetComponent<SpriteRenderer> ().sortingOrder = -2;
 		BackgroundFive.GetComponent<SpriteRenderer> ().sortingOrder = -3;
+	}
+
 
     private void chooseEnemyKind(GameObject BackGroundGO)
     {

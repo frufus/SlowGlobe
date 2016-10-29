@@ -16,7 +16,7 @@ public class BackgroundMovement : MonoBehaviour
     public float SpriteHight;
     private Sprite spriteOne;
 
-	float offset = 0.5f;
+	float offset = 0.75f;
 	GameObject[] Layer1;
 	GameObject[] Layer2;
 
@@ -57,6 +57,62 @@ public class BackgroundMovement : MonoBehaviour
 		MoveBackground (Layer2, offset, false);
 	}
 
+
+    private void chooseEnemyKind(GameObject BackGroundGO)
+    {
+        if(currentStage <= GameController.Instance.DeepSeaNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[0];
+            fishController.GetComponent<EnemyController>().EnableEnemies();
+
+        }
+        else if (currentStage <= GameController.Instance.MidseeNumber && currentStage > GameController.Instance.DeepSeaNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[1];
+            fishController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage <= GameController.Instance.SeeNumber &&  currentStage > GameController.Instance.MidseeNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[2];
+            fishController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage == GameController.Instance.SurfaceNumber) 
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[3];
+            //fishController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage <= GameController.Instance.SkyeNumber && currentStage > GameController.Instance.SurfaceNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[4];
+            thunderController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage <= GameController.Instance.DarkskyNumber && currentStage > GameController.Instance.SkyeNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[5];
+            thunderController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage == GameController.Instance.SkyeToSpaceNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[6];
+            thunderController.GetComponent<EnemyController>().EnableEnemies();
+        }
+        else if (currentStage >= GameController.Instance.SpaceNumber)
+        {
+            if (BackGroundSprites.Count != 0)
+                BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[7];
+            rocketController.GetComponent<EnemyController>().EnableEnemies();
+        }
+
+    }
+
+
 	void MoveBackground (GameObject[] bgs, float off, bool isBG)
 	{
 		SpriteHight = bgs[0].GetComponent<SpriteRenderer>().bounds.size.y;
@@ -76,60 +132,6 @@ public class BackgroundMovement : MonoBehaviour
 
 			}
 			index--;
-		}
-
-	}
-
-	private void chooseEnemyKind(GameObject BackGroundGO)
-	{
-		if(currentStage <= GameController.Instance.DeepSeaNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[0];
-			fishController.GetComponent<EnemyController>().EnableEnemies();
-
-		}
-		else if (currentStage <= GameController.Instance.MidseeNumber && currentStage > GameController.Instance.DeepSeaNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[1];
-			fishController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage <= GameController.Instance.SeeNumber &&  currentStage > GameController.Instance.MidseeNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[2];
-			fishController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage == GameController.Instance.SurfaceNumber) 
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[3];
-			//fishController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage <= GameController.Instance.SkyeNumber && currentStage > GameController.Instance.SurfaceNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[4];
-			thunderController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage <= GameController.Instance.DarkskyNumber && currentStage > GameController.Instance.SkyeNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[5];
-			thunderController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage == GameController.Instance.SkyeToSpaceNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[6];
-			thunderController.GetComponent<EnemyController>().EnableEnemies();
-		}
-		else if (currentStage >= GameController.Instance.SpaceNumber)
-		{
-			if (BackGroundSprites.Count != 0)
-				BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[7];
-			rocketController.GetComponent<EnemyController>().EnableEnemies();
 		}
 
 	}

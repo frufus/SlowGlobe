@@ -45,7 +45,7 @@ public class MouseController : MonoBehaviour {
 				if (rightMouseDown) {
 					mod = 1.5f;
 				}
-				if (slowmoTime > 0) {
+				if (slowmoTime > 1) {
 					col.GetComponent<MovementBehaviour>().speed = col.GetComponent<MovementBehaviour>().speed*mod;
 					col.GetComponent<SpriteRenderer>().color = Color.blue;
 					slowmoTime -= slowmoCostPerTick;
@@ -59,7 +59,7 @@ public class MouseController : MonoBehaviour {
 				}
 			}
 		}
-		GameObject x = GameObject.Find("Outer");
+		GameObject x = GameObject.Find("outer");
 		Image y = x.GetComponent<Image>();
 		y.fillAmount = (float) slowmoTime / slowmoMaxValue;
 		

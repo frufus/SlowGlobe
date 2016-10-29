@@ -14,9 +14,9 @@ public class EnemyMovement : MonoBehaviour {
     startPosition = transform.position;
 
     if (side == 0) {
-      movement.direction = new Vector3(Random.Range(10, 50), Random.Range(-5, 5), 0);
+      movement.direction = new Vector3(Random.Range(10, 50), Random.Range(-7, 1), 0);
     } else {
-      movement.direction = new Vector3(Random.Range(-50, -10), Random.Range(-5, 5), 0);
+      movement.direction = new Vector3(Random.Range(-50, -10), Random.Range(-7, 1), 0);
     }
     movement.direction.Normalize();
     movement.defaultSpeed = Random.Range(.05f, .1f);

@@ -35,12 +35,14 @@ public class BackgroundMovement : MonoBehaviour
             BackgroundOne.transform.position = new Vector3(BackgroundOne.transform.position.x, BackGroundTwo.transform.position.y + SpriteHight * 0.88f, 0);
             BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
             BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
+            BirdController.Instance.EnableBirds();
         }
         if (BackGroundTwo.transform.position.y + SpriteHight / 2 < BorderDown.transform.position.y)
         {
             BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
             BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
             BackGroundTwo.transform.position = new Vector3(BackGroundTwo.transform.position.x, (BackgroundOne.transform.position.y + SpriteHight * 0.88f), 0);
+            BirdController.Instance.EnableBirds();
         }
 
     }

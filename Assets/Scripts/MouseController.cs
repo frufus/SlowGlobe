@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseController : MonoBehaviour {
 
 	private bool mouseDown = false;
 	private bool rightMouseDown = false;
+	private int slowmoTime;
+	private int slowmoCostPerTick = 6;
+	private int slowmoGainPerTick = 3;
+	private int slowmoMaxValue = 1000;
 
 	// Use this for initialization
 	void Start () {
 		Cursor.visible = false;
+		slowmoTime = slowmoMaxValue;
 	}
 
 	// Update is called once per frame
@@ -39,10 +45,23 @@ public class MouseController : MonoBehaviour {
 				if (rightMouseDown) {
 					mod = 1.5f;
 				}
-
-				col.GetComponent<MovementBehaviour>().speed = col.GetComponent<MovementBehaviour>().speed*mod;
-				col.GetComponent<SpriteRenderer>().color = Color.blue;
+				if (slowmoTime > 1) {
+					col.GetComponent<MovementBehaviour>().speed = col.GetComponent<MovementBehaviour>().speed*mod;
+					col.GetComponent<SpriteRenderer>().color = Color.blue;
+					slowmoTime -= slowmoCostPerTick;
+				}
+			}
+		} else {
+			if (slowmoTime < slowmoMaxValue) {
+				slowmoTime += slowmoGainPerTick;
+				if (slowmoTime > slowmoMaxValue) {
+					slowmoTime = slowmoMaxValue;
+				}
 			}
 		}
+		GameObject x = GameObject.Find("Outer");
+		Image y = x.GetComponent<Image>();
+		y.fillAmount = (float) slowmoTime / slowmoMaxValue;
+		
 	}
 }

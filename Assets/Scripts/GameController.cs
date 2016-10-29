@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
     // Midsee Number
     public int MidseeNumber;
     //mid to normal
-    public int MidToSee;
+    public int MidToSee = 1;
     // Anzahl an Seehintergründen
     public int SeeNumber;
     // Oberfläche = 1
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour {
         DeepToMid = DeepSeaNumber + DeepToMid;
         MidseeNumber = DeepToMid + MidseeNumber;
         MidToSee = MidseeNumber + MidToSee;
-        SeeNumber = MidseeNumber + SeeNumber;
+        SeeNumber = MidToSee + SeeNumber;
         SurfaceNumber = SeeNumber + SurfaceNumber;
         SkyeNumber = SurfaceNumber + SkyeNumber;
         SkyeToSpaceNumber = SkyeNumber + SkyeToSpaceNumber;

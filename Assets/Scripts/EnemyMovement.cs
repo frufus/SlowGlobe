@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour {
   public bool isAcceled;
 
   public void updateSlomo () {
-    print(slowDuration);
+   // print(slowDuration);
     if (inSlomoRadius) {
       slowDuration += Time.deltaTime*2;
       isSlowed = true;
@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour {
   void applySlowmo() {
     float speedMod = 1f;
     if (isSlowed) {
-      speedMod -= 0.5f;
+      speedMod -= 0.6f;
     }
     if (isAcceled) {
       speedMod += 0.5f;

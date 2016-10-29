@@ -42,10 +42,12 @@ public class MouseController : MonoBehaviour {
 			Collider2D[] hitColliders = Physics2D.OverlapCircleAll(new Vector2(wm.x, wm.y), 2);
 			foreach (Collider2D col in hitColliders) {
 				if (rightMouseDown) {
-					col.GetComponent<EnemyMovement>().inAccelRadius = true;
+                    if(col.GetComponent<EnemyMovement>() != null)
+					    col.GetComponent<EnemyMovement>().inAccelRadius = true;
 				}
 				if (mouseDown) {
-					col.GetComponent<EnemyMovement>().inSlomoRadius = true;
+                    if (col.GetComponent<EnemyMovement>() != null)
+                        col.GetComponent<EnemyMovement>().inSlomoRadius = true;
 				}
 				if (slowmoTime > 1) {
 					slowmoTime -= slowmoCostPerTick;

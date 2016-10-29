@@ -19,7 +19,7 @@ public class FishMovement : EnemyMovement {
       movement.direction = new Vector3(Random.Range(-50, -10), Random.Range(-10, 0), 0);
     }
     movement.direction.Normalize();
-    movement.defaultSpeed = Random.Range(.05f, .1f);
+    movement.defaultSpeed = Random.Range(.02f, .08f);
     movement.speed = movement.defaultSpeed;
   }
 
@@ -36,7 +36,7 @@ public class FishMovement : EnemyMovement {
     else
     {
       if(canMove) {
-        transform.Translate(movement.direction * movement.speed);
+        transform.Translate(new Vector3((movement.direction.x * movement.speed), movement.direction.y * 0.1f, 0));
       }
     }
   }

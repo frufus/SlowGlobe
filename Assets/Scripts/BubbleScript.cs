@@ -4,10 +4,10 @@ using System.Collections;
 public class BubbleScript : MonoBehaviour {
 
 
-	const float maxThresholdTop = 0.5f;
-	const float maxThresholdBottom = -0.5f;
-	const float maxThresholdLeft = -4.0f;
-	const float maxThresholdRight = 4.0f;
+	const float maxThresholdTop = .2f;
+	const float maxThresholdBottom = -0.2f;
+	const float maxThresholdLeft = -3.0f;
+	const float maxThresholdRight = 3.0f;
 
 	float baseSpeed;
 	Vector3 target;
@@ -18,7 +18,7 @@ public class BubbleScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		movement = GetComponent<MovementBehaviour>();
-		movement.defaultSpeed = .8f;
+		movement.defaultSpeed = .5f;
 		movement.speed = movement.defaultSpeed;
 
 		SetNewTarget ();
@@ -59,6 +59,7 @@ public class BubbleScript : MonoBehaviour {
 		float y = Random.Range (maxThresholdBottom, maxThresholdTop);
 		float xNext = Random.Range (maxThresholdLeft, maxThresholdRight);
 		float yNext = Random.Range (maxThresholdBottom, maxThresholdTop);
+        Debug.Log("Y: " + y);
 		nextTarget = new Vector3 (xNext, yNext, 0f);
 		target = new Vector3 (x, y, 0f);
 		while (Vector3.Distance (target, nextTarget) < 1f) {

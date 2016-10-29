@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-
+    public GameObject Bubble;
+    public GameObject GameOverGO;
+    public GameObject Background;
     public int CurrentHeight;
     //Anzahl an Tiefseehintergründen, wie oft sie wiederholt werden sollen
     public int DeepSeaNumber;
@@ -52,7 +55,11 @@ public class GameController : MonoBehaviour {
         SkyeNumber = SurfaceNumber + SkyeNumber;
         SkyeToSpaceNumber = SkyeNumber + SkyeToSpaceNumber;
     }
-
+    
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     // Use this for initialization
     void Start () {

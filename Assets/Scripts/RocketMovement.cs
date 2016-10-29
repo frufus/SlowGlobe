@@ -18,7 +18,7 @@ public class RocketMovement : EnemyMovement {
       movement.direction = new Vector3(Random.Range(-50, -10), Random.Range(-5, 5), 0);
     }
     movement.direction.Normalize();
-    movement.defaultSpeed = Random.Range(.05f, .1f);
+    movement.defaultSpeed = Random.Range(.02f, .08f);
     movement.speed = movement.defaultSpeed;
   }
 

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class BirdController : MonoBehaviour {
 
-    int rndNumberOfItems;
+    int rndNumberOfEnemyBirds;
     public List<GameObject> EnemyBirds;
+    public bool BirdsCanMove = false;
 
     private static BirdController instance = null;
     public static BirdController Instance
@@ -21,11 +22,19 @@ public class BirdController : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        rndNumberOfItems = Random.Range(0, EnemyBirds.Count);
+        EnableBirds();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+    public void EnableBirds()
+    {
+        rndNumberOfEnemyBirds = Random.Range(0, EnemyBirds.Count);
+        for (int i = 0; i <= rndNumberOfEnemyBirds; i++)
+        {
+            EnemyBirds[i].SetActive(true);
+        }
+    }
 }

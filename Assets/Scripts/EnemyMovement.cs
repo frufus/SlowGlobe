@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour {
         {
             canMove = false;
             transform.position = startPosition;
+            gameObject.SetActive(false);
         }
         else
         {

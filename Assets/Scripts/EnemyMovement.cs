@@ -4,7 +4,8 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour {
 
     public Vector3 direction;
-    public float speed = .02f;
+    public float speed;
+    public float defaultSpeed;
     private Vector3 startPosition;
     bool canMove = true;
     
@@ -12,6 +13,10 @@ public class EnemyMovement : MonoBehaviour {
 	void Start () {
         startPosition = transform.position;
         direction = new Vector3(Random.Range(10, 50), Random.Range(-2, 5), 0);
+        direction.Normalize();
+
+        defaultSpeed = Random.Range(.05f, .1f);
+        speed = defaultSpeed;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +30,7 @@ public class EnemyMovement : MonoBehaviour {
         else
         {
             if(canMove)
-                transform.Translate(-direction / 10 * speed);
+                transform.Translate(-direction * speed);
         }
         
 	}

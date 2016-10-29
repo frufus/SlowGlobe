@@ -9,8 +9,8 @@ public class MouseController : MonoBehaviour {
 	private bool rightMouseDown = false;
 	private int slowmoTime;
 	private int slowmoCostPerTick = 6;
-	private int slowmoGainPerTick = 3;
-	private int slowmoMaxValue = 1000;
+	private int slowmoGainPerTick = 5;
+	private int slowmoMaxValue = 1500;
 
 	// Use this for initialization
 	void Start () {
@@ -20,17 +20,17 @@ public class MouseController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(1)) {
 			mouseDown = true;
 		}
-		if (Input.GetMouseButtonDown(1)) {
+		if (Input.GetMouseButtonDown(0)) {
 			rightMouseDown = true;
 		}
 
-		if (Input.GetMouseButtonUp(0)) {
+		if (Input.GetMouseButtonUp(1)) {
 			mouseDown = false;
 		}
-		if (Input.GetMouseButtonUp(1)) {
+		if (Input.GetMouseButtonUp(0)) {
 			rightMouseDown = false;
 		}
 
@@ -41,13 +41,13 @@ public class MouseController : MonoBehaviour {
 		if (mouseDown || rightMouseDown) {
 			Collider2D[] hitColliders = Physics2D.OverlapCircleAll(new Vector2(wm.x, wm.y), 2);
 			foreach (Collider2D col in hitColliders) {
-				if (rightMouseDown) {
-					col.GetComponent<EnemyMovement>().inAccelRadius = true;
-				}
-				if (mouseDown) {
-					col.GetComponent<EnemyMovement>().inSlomoRadius = true;
-				}
-				if (slowmoTime > 1) {
+					if (slowmoTime > 1) {
+						if (rightMouseDown) {
+							col.GetComponent<EnemyMovement>().inAccelRadius = true;
+						}
+						if (mouseDown) {
+							col.GetComponent<EnemyMovement>().inSlomoRadius = true;
+						}
 					slowmoTime -= slowmoCostPerTick;
 				}
 			}
@@ -62,6 +62,6 @@ public class MouseController : MonoBehaviour {
 		GameObject timeBar = GameObject.Find("outer");
 		Image fillCircle = timeBar.GetComponent<Image>();
 		fillCircle.fillAmount = (float) slowmoTime / slowmoMaxValue;
-		
+
 	}
 }

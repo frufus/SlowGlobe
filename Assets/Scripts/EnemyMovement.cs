@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
   public void updateSlomo () {
     print(slowDuration);
     if (inSlomoRadius) {
-      slowDuration += Time.deltaTime*2;
+      slowDuration += Time.deltaTime*1.5f;
       isSlowed = true;
       applySlowmo();
     } else if (isSlowed) {
@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     if (inAccelRadius) {
-      accelDuration += Time.deltaTime*2;
+      accelDuration += Time.deltaTime*1.5f;
       isAcceled = true;
       applySlowmo();
     } else if (isAcceled) {

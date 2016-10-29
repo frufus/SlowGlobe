@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
   private void SpawnEnemies() {
-    rndNumberOfEnemyList = Random.Range(0, 5);
+    rndNumberOfEnemyList = Random.Range(2, 10);
     int count = 0;
     for (int i = 0; i < EnemyList.Count; i++)
     {
@@ -57,9 +57,9 @@ public class EnemyController : MonoBehaviour {
 
         Vector3 cp;
         if (EnemyList[i].GetComponent<EnemyMovement>().side == 0) {
-          cp = new Vector3(0, Random.Range(Screen.height*2/3, Screen.height - Screen.height*1/5), 0);
+          cp = new Vector3(0, Random.Range(Screen.height*1/2, Screen.height - Screen.height*1/7), 0);
         } else {
-          cp = new Vector3(Screen.width, Random.Range(Screen.height*2/3, Screen.height - Screen.height*1/5), 0);
+          cp = new Vector3(Screen.width, Random.Range(Screen.height*1/2, Screen.height - Screen.height*1/7), 0);
         }
         Vector3 wp = Camera.main.ScreenToWorldPoint(cp);
         wp.z = 0;

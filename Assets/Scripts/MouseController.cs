@@ -59,9 +59,9 @@ public class MouseController : MonoBehaviour {
 				}
 			}
 		}
-		GameObject x = GameObject.Find("outer");
-		Image y = x.GetComponent<Image>();
-		y.fillAmount = (float) slowmoTime / slowmoMaxValue;
+		GameObject timeBar = GameObject.Find("outer");
+		Image fillCircle = timeBar.GetComponent<Image>();
+		fillCircle.fillAmount = (float) slowmoTime / slowmoMaxValue;
 		
 	}
 }

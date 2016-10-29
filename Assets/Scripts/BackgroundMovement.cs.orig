@@ -1,24 +1,29 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class BackgroundMovement : MonoBehaviour
 {
 
+<<<<<<< HEAD
     public List<Sprite> BackGroundSprites;
     public GameObject BackgroundOne;
-    public GameObject BackgroundTwo;
+    public GameObject BackGroundTwo;
+=======
+    
+	public GameObject BackgroundOne;
+	public GameObject BackgroundTwo;
 	public GameObject BackgroundThree;
 	public GameObject BackgroundFour;
 	public GameObject BackgroundFive;
+>>>>>>> Paralax
     public GameObject BorderDown;
     public float speed;
     public float SpriteHight;
     private Sprite spriteOne;
-
-	float offset = 0.75f;
-	GameObject[] Layer1;
-	GameObject[] Layer2;
+<<<<<<< HEAD
+    int backgroundlayer = -2;
+    int foregroundlayer = -1;
 
     private GameObject fishController;
     private GameObject thunderController;
@@ -29,11 +34,25 @@ public class BackgroundMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		Layer1 = new GameObject[]{BackgroundOne, BackgroundTwo};
-		Layer2 = new GameObject[]{BackgroundThree, BackgroundFour, BackgroundFive};
         fishController = GameObject.Find("FishController");
         thunderController = GameObject.Find("ThunderController");
         rocketController = GameObject.Find("RocketController");
+        //SpriteHight = BackgroundOne.GetComponent<SpriteRenderer>().bounds.max.y / 2;
+        SpriteHight = BackgroundOne.GetComponent<SpriteRenderer>().bounds.size.y;
+=======
+    int backgroundlayer = -4;
+    int foregroundlayer = -3;
+	float offset = 0.75f;
+	GameObject[] Layer1;
+	GameObject[] Layer2;
+
+  
+    
+    // Use this for initialization
+    void Start()
+    {
+		Layer1 = new GameObject[]{BackgroundOne, BackgroundTwo};
+		Layer2 = new GameObject[]{BackgroundThree, BackgroundFour, BackgroundFive};
         //SpriteHight = BackgroundOne.GetComponent<SpriteRenderer>().bounds.max.y / 2;
 		for (int i = 0; i < Layer1.Length; i++) {
 			GameObject bg = Layer1 [i];
@@ -45,20 +64,34 @@ public class BackgroundMovement : MonoBehaviour
 		}
        
 
+>>>>>>> Paralax
     }
 
     // Update is called once per frame
     void Update()
     {
-		MoveBackground (Layer1, 1f);
-		MoveBackground (Layer2, offset);
-		BackgroundOne.GetComponent<SpriteRenderer> ().sortingOrder = -4;
-		BackgroundTwo.GetComponent<SpriteRenderer> ().sortingOrder = -5;
-		BackgroundThree.GetComponent<SpriteRenderer> ().sortingOrder = -1;
-		BackgroundFour.GetComponent<SpriteRenderer> ().sortingOrder = -2;
-		BackgroundFive.GetComponent<SpriteRenderer> ().sortingOrder = -3;
-	}
-
+<<<<<<< HEAD
+        BackgroundOne.transform.Translate(Vector3.down * speed);
+        BackGroundTwo.transform.Translate(Vector3.down * speed);
+        if (BackgroundOne.transform.position.y + SpriteHight/2 < BorderDown.transform.position.y)
+        {
+            currentStage++;
+            BackgroundOne.transform.position = new Vector3(BackgroundOne.transform.position.x, BackGroundTwo.transform.position.y + SpriteHight * 0.88f, 0);
+            BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
+            BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
+            fishController.GetComponent<EnemyController>().EnableEnemies();
+            chooseEnemyKind(BackgroundOne);
+        }
+        if (BackGroundTwo.transform.position.y + SpriteHight / 2 < BorderDown.transform.position.y)
+        {
+            currentStage++;
+            BackGroundTwo.GetComponent<SpriteRenderer>().sortingOrder = backgroundlayer;
+            BackgroundOne.GetComponent<SpriteRenderer>().sortingOrder = foregroundlayer;
+            BackGroundTwo.transform.position = new Vector3(BackGroundTwo.transform.position.x, (BackgroundOne.transform.position.y + SpriteHight * 0.88f), 0);
+            chooseEnemyKind(BackGroundTwo);
+        }
+        
+    }
 
     private void chooseEnemyKind(GameObject BackGroundGO)
     {
@@ -111,6 +144,16 @@ public class BackgroundMovement : MonoBehaviour
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[7];
             rocketController.GetComponent<EnemyController>().EnableEnemies();
         }
+=======
+		
+		MoveBackground (Layer1, 1f);
+		MoveBackground (Layer2, offset);
+		BackgroundOne.GetComponent<SpriteRenderer> ().sortingOrder = -4;
+		BackgroundTwo.GetComponent<SpriteRenderer> ().sortingOrder = -5;
+		BackgroundThree.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+		BackgroundFour.GetComponent<SpriteRenderer> ().sortingOrder = -2;
+		BackgroundFive.GetComponent<SpriteRenderer> ().sortingOrder = -3;
+>>>>>>> Paralax
 
     }
 
@@ -122,9 +165,7 @@ public class BackgroundMovement : MonoBehaviour
 		foreach (GameObject bg in bgs) {
 			bg.transform.Translate (Vector3.down * speed *off);
 			if (bg.transform.position.y + SpriteHight / bgs.Length < BorderDown.transform.position.y) {
-				currentStage++;
 				bg.transform.position = new Vector3 (bg.transform.position.x, bg.transform.position.y + (SpriteHight * bgs.Length) * 0.88f, 0);
-				chooseEnemyKind(bg);
 			}
 		}
 

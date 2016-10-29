@@ -14,7 +14,10 @@ public class MovementBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-      GetComponent<SpriteRenderer>().color = Color.white;
-      speed = defaultSpeed;
+		EnemyMovement em = gameObject.GetComponent<EnemyMovement>();
+		if (em != null) {
+			gameObject.GetComponent<EnemyMovement>().inAccelRadius = false;
+	    	gameObject.GetComponent<EnemyMovement>().inSlomoRadius = false;
+		}
 	}
 }

@@ -128,7 +128,6 @@ public class BackgroundMovement : MonoBehaviour
 		foreach (GameObject bg in bgs) {
 			int bonus = !isBG ? 1 : 0;
 			bg.GetComponent<SpriteRenderer> ().sortingOrder = index * -1 + bgs.Length + bonus;
-			//print (Mathf.FloorToInt(offset*2f).ToString());
 			bg.transform.Translate (Vector3.down * speed *off);
 			if (bg.transform.position.y + SpriteHight / bgs.Length < BorderDown.transform.position.y) {
 				

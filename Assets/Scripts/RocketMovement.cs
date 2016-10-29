@@ -24,9 +24,11 @@ public class RocketMovement : EnemyMovement {
 
   // Update is called once per frame
   void Update () {
+    updateSlomo();
     if(transform.position.x < -11 || transform.position.x > 11)
     {
       gameObject.SetActive(false);
+      removeSlomo();
       transform.position = startPosition;
 
     }

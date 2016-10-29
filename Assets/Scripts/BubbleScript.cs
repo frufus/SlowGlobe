@@ -19,6 +19,7 @@ public class BubbleScript : MonoBehaviour {
 	void Start () {
 		movement = GetComponent<MovementBehaviour>();
 		movement.defaultSpeed = 2f;
+		movement.speed = movement.defaultSpeed;
 
 		SetNewTarget ();
 	}

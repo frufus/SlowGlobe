@@ -10,12 +10,6 @@ public class BubbleScript : MonoBehaviour {
 	const float maxThresholdRight = 5.0f;
 
 	float baseSpeed;
-	string directionX = "left";
-	string directionY = "top";
-	float thresholdXleft;
-	float thresholdXright;
-	float thresholdYtop;
-	float thresholdYbottom;
 	Vector3 pos;
 	Vector3 target;
 	Vector3 nextTarget;
@@ -23,10 +17,6 @@ public class BubbleScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thresholdXleft = Random.Range(maxThresholdLeft, 0.0f);
-		thresholdXright = Random.Range(0.0f, maxThresholdRight);
-		thresholdYtop = Random.Range(0.0f, maxThresholdTop);
-		thresholdYbottom = Random.Range(maxThresholdBottom, 0.0f);
 		SetNewTarget ();
 	}
 	
@@ -35,8 +25,7 @@ public class BubbleScript : MonoBehaviour {
 		baseSpeed = Time.deltaTime * 2f;
 		pos = transform.position;
 		Move ();
-//		ToggleX ();
-//		ToggleY ();
+
 	}
 
 	void Move() {
@@ -85,44 +74,5 @@ public class BubbleScript : MonoBehaviour {
 	void SetTargetY() {
 		target = new Vector3 (target.x, Random.Range (maxThresholdBottom, maxThresholdTop), 0f);
 	}
-
-	void ToggleX(){
-		if (directionX == "left") {
-			float speed = baseSpeed;  
-			if (pos.x > thresholdXleft) {
-				transform.Translate (Vector3.left * speed);
-			} else {
-				directionX = "right";
-				thresholdXright = Random.Range(0.0f, maxThresholdRight);
-			}
-		} else if (directionX == "right") {
-			float speed = baseSpeed; 
-			if (pos.x < thresholdXright) {
-				transform.Translate (Vector3.right * speed);
-			} else {
-				directionX = "left";
-				thresholdXleft = Random.Range(maxThresholdLeft, 0.0f);
-			}
-		}
-	}
-
-	void ToggleY(){
-		if (directionY == "top") {
-			float speed = baseSpeed; 
-			if (pos.y < thresholdYtop) {
-				transform.Translate (Vector3.up * speed);
-			} else {
-				directionY = "bottom";
-				thresholdYbottom = Random.Range(maxThresholdBottom, 0.0f);
-			}
-		} else if (directionY == "bottom") {
-			float speed = baseSpeed; 
-			if (pos.y > thresholdYbottom) {
-				transform.Translate (Vector3.down * speed);
-			} else {
-				directionY = "top";
-				thresholdYtop = Random.Range(0.0f, maxThresholdTop);
-			}
-		}
-	}
+		
 }

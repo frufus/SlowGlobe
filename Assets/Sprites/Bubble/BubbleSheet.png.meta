@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ee497d06472f74342ab70cfdd122e7e1
-timeCreated: 1477713297
+timeCreated: 1477737599
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,12 +16,75 @@ TextureImporter:
     21300018: BubbleSheet_9
     21300020: BubbleSheet_10
     21300022: BubbleSheet_11
-  serializedVersion: 2
+    21300024: BubbleSheet_12
+    21300026: BubbleSheet_13
+    21300028: BubbleSheet_14
+    21300030: BubbleSheet_15
+    21300032: BubbleSheet_16
+    21300034: BubbleSheet_17
+    21300036: BubbleSheet_18
+    21300038: BubbleSheet_19
+    21300040: BubbleSheet_20
+    21300042: BubbleSheet_21
+    21300044: BubbleSheet_22
+    21300046: BubbleSheet_23
+    21300048: BubbleSheet_24
+    21300050: BubbleSheet_25
+    21300052: BubbleSheet_26
+    21300054: BubbleSheet_27
+    21300056: BubbleSheet_28
+    21300058: BubbleSheet_29
+    21300060: BubbleSheet_30
+    21300062: BubbleSheet_31
+    21300064: BubbleSheet_32
+    21300066: BubbleSheet_33
+    21300068: BubbleSheet_34
+    21300070: BubbleSheet_35
+    21300072: BubbleSheet_36
+    21300074: BubbleSheet_37
+    21300076: BubbleSheet_38
+    21300078: BubbleSheet_39
+    21300080: BubbleSheet_40
+    21300082: BubbleSheet_41
+    21300084: BubbleSheet_42
+    21300086: BubbleSheet_43
+    21300088: BubbleSheet_44
+    21300090: BubbleSheet_45
+    21300092: BubbleSheet_46
+    21300094: BubbleSheet_47
+    21300096: BubbleSheet_48
+    21300098: BubbleSheet_49
+    21300100: BubbleSheet_50
+    21300102: BubbleSheet_51
+    21300104: BubbleSheet_52
+    21300106: BubbleSheet_53
+    21300108: BubbleSheet_54
+    21300110: BubbleSheet_55
+    21300112: BubbleSheet_56
+    21300114: BubbleSheet_57
+    21300116: BubbleSheet_58
+    21300118: BubbleSheet_59
+    21300120: BubbleSheet_60
+    21300122: BubbleSheet_61
+    21300124: BubbleSheet_62
+    21300126: BubbleSheet_63
+    21300128: BubbleSheet_64
+    21300130: BubbleSheet_65
+    21300132: BubbleSheet_66
+    21300134: BubbleSheet_67
+    21300136: BubbleSheet_68
+    21300138: BubbleSheet_69
+    21300140: BubbleSheet_70
+    21300142: BubbleSheet_71
+    21300144: BubbleSheet_72
+    21300146: BubbleSheet_73
+    21300148: BubbleSheet_74
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -33,10 +96,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
@@ -47,9 +108,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -57,15 +116,31 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    textureFormat: -2
-    compressionQuality: 60
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 60
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -74,11 +149,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 256
-        height: 256
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -86,12 +161,12 @@ TextureImporter:
       name: BubbleSheet_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
+        x: 525
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -99,12 +174,12 @@ TextureImporter:
       name: BubbleSheet_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
+        x: 1050
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -112,12 +187,12 @@ TextureImporter:
       name: BubbleSheet_3
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
+        x: 1575
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -125,12 +200,12 @@ TextureImporter:
       name: BubbleSheet_4
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 256
-        height: 256
+        x: 2100
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -138,12 +213,12 @@ TextureImporter:
       name: BubbleSheet_5
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 256
-        width: 256
-        height: 256
+        x: 2625
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -151,12 +226,12 @@ TextureImporter:
       name: BubbleSheet_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 3150
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -164,12 +239,12 @@ TextureImporter:
       name: BubbleSheet_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
+        x: 3675
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -177,12 +252,12 @@ TextureImporter:
       name: BubbleSheet_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
+        x: 4200
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -190,12 +265,12 @@ TextureImporter:
       name: BubbleSheet_9
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
+        x: 4725
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -203,12 +278,740 @@ TextureImporter:
       name: BubbleSheet_10
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
+        x: 5250
+        y: 2100
+        width: 525
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_11
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 2100
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 2100
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 2100
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_14
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 2100
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_16
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_21
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_22
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_23
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_24
+      rect:
+        serializedVersion: 2
+        x: 4725
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_25
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_26
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_27
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_28
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_29
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 1575
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_31
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_34
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_35
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_36
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_37
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_38
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_39
+      rect:
+        serializedVersion: 2
+        x: 4725
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_40
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_41
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_42
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_43
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_44
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 1050
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_46
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_48
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_49
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_50
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_51
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_52
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_53
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_54
+      rect:
+        serializedVersion: 2
+        x: 4725
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_55
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_56
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_57
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_58
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_59
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 525
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_61
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_64
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_65
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BubbleSheet_72
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

@@ -8,6 +8,7 @@ public class BirdController : MonoBehaviour {
   public List<GameObject> EnemyBirds;
   public bool BirdsCanMove = false;
   public GameObject enemy;
+  private float spawnTime = 2f;
 
   private static BirdController instance = null;
   public static BirdController Instance
@@ -28,8 +29,8 @@ public class BirdController : MonoBehaviour {
   }
 
   private void CreateBirds() {
-    for (int i=0; i<100; i++) {
-      EnemyBirds.Add(Instantiate(enemy, new Vector3(0, 0, 0), Quaternion.identity));
+    for (int i=0; i<50; i++) {
+      EnemyBirds.Add(Instantiate(enemy));
       EnemyBirds[i].SetActive(false);
       EnemyBirds[i].GetComponent<EnemyMovement>().side = Random.Range(0,2);
     }
@@ -42,19 +43,30 @@ public class BirdController : MonoBehaviour {
 
   public void EnableBirds()
   {
-    rndNumberOfEnemyBirds = Random.Range(0, EnemyBirds.Count);
-    for (int i = 0; i <= rndNumberOfEnemyBirds; i++)
+    InvokeRepeating("SpawnBirds", spawnTime, spawnTime);
+  }
+
+  private void SpawnBirds() {
+    rndNumberOfEnemyBirds = Random.Range(0, 5);
+    int count = 0;
+    for (int i = 0; i < EnemyBirds.Count; i++)
     {
-      Vector3 cp;
-      if (EnemyBirds[i].GetComponent<EnemyMovement>().side == 0) {
-        cp = new Vector3(0, Random.Range(0, Screen.height), 0);
-      } else {
-        cp = new Vector3(Screen.width, Random.Range(0, Screen.height), 0);
+      if (!EnemyBirds[i].activeInHierarchy) {
+        Vector3 cp;
+        if (EnemyBirds[i].GetComponent<EnemyMovement>().side == 0) {
+          cp = new Vector3(0, Random.Range(Screen.height*2/3, Screen.height), 0);
+        } else {
+          cp = new Vector3(Screen.width, Random.Range(Screen.height*2/3, Screen.height), 0);
+        }
+        Vector3 wp = Camera.main.ScreenToWorldPoint(cp);
+        wp.z = 0;
+        EnemyBirds[i].transform.position = wp;
+        EnemyBirds[i].SetActive(true);
+        count++;
+        if (count == rndNumberOfEnemyBirds) {
+          break;
+        }
       }
-      Vector3 wp = Camera.main.ScreenToWorldPoint(cp);
-      wp.z = 0;
-      EnemyBirds[i].transform.position = wp;
-      EnemyBirds[i].SetActive(true);
     }
   }
 }

@@ -25,11 +25,12 @@ public class EnemyMovement : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-    if(transform.position.x < -10)
+    if(transform.position.x < -11 || transform.position.x > 11)
     {
-      canMove = false;
-      transform.position = startPosition;
       gameObject.SetActive(false);
+      //canMove = false;
+      transform.position = startPosition;
+
     }
     else
     {

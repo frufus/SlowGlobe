@@ -9,6 +9,7 @@ public class BackgroundMovement : MonoBehaviour
 	public GameObject BackgroundTwo;
 	public GameObject BackgroundThree;
 	public GameObject BackgroundFour;
+	public GameObject BackgroundFive;
     public GameObject BorderDown;
     public float speed;
     public float SpriteHight;
@@ -16,15 +17,25 @@ public class BackgroundMovement : MonoBehaviour
     int backgroundlayer = -4;
     int foregroundlayer = -3;
 	float offset = 0.75f;
+	GameObject[] Layer1;
+	GameObject[] Layer2;
 
   
     
     // Use this for initialization
     void Start()
     {
-
+		Layer1 = new GameObject[]{BackgroundOne, BackgroundTwo};
+		Layer2 = new GameObject[]{BackgroundThree, BackgroundFour, BackgroundFive};
         //SpriteHight = BackgroundOne.GetComponent<SpriteRenderer>().bounds.max.y / 2;
-        
+		for (int i = 0; i < Layer1.Length; i++) {
+			GameObject bg = Layer1 [i];
+			bg.transform.position = new Vector3 (bg.transform.position.x,  (bg.GetComponent<SpriteRenderer>().bounds.size.y * (i)) * 0.88f, 0);
+		}
+		for (int j = 0; j < Layer2.Length; j++) {
+			GameObject bg = Layer2 [j];
+			bg.transform.position = new Vector3 (bg.transform.position.x,  ((bg.GetComponent<SpriteRenderer>().bounds.size.y ) + bg.GetComponent<SpriteRenderer>().bounds.size.y * (j)) * 0.88f, 0);
+		}
        
 
     }
@@ -32,27 +43,28 @@ public class BackgroundMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		MoveBackground (BackgroundOne, BackgroundTwo, 1f);
-		MoveBackground (BackgroundThree, BackgroundFour, offset);
+		
+		MoveBackground (Layer1, 1f);
+		MoveBackground (Layer2, offset);
 		BackgroundOne.GetComponent<SpriteRenderer> ().sortingOrder = -4;
-		BackgroundTwo.GetComponent<SpriteRenderer> ().sortingOrder = -3;
-		BackgroundThree.GetComponent<SpriteRenderer> ().sortingOrder = -2;
-		BackgroundFour.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+		BackgroundTwo.GetComponent<SpriteRenderer> ().sortingOrder = -5;
+		BackgroundThree.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+		BackgroundFour.GetComponent<SpriteRenderer> ().sortingOrder = -2;
+		BackgroundFive.GetComponent<SpriteRenderer> ().sortingOrder = -3;
 
     }
 
 
-	void MoveBackground (GameObject bg1, GameObject bg2, float off)
+	void MoveBackground (GameObject[] bgs, float off)
 	{
-		SpriteHight = bg1.GetComponent<SpriteRenderer>().bounds.size.y * off;
+		SpriteHight = bgs[0].GetComponent<SpriteRenderer>().bounds.size.y;
 
-		bg1.transform.Translate (Vector3.down * speed *off);
-		bg2.transform.Translate (Vector3.down * speed *off);
-		if (bg1.transform.position.y + SpriteHight / 2 < BorderDown.transform.position.y) {
-			bg1.transform.position = new Vector3 (bg1.transform.position.x, bg2.transform.position.y + SpriteHight * 0.88f, 0);
+		foreach (GameObject bg in bgs) {
+			bg.transform.Translate (Vector3.down * speed *off);
+			if (bg.transform.position.y + SpriteHight / bgs.Length < BorderDown.transform.position.y) {
+				bg.transform.position = new Vector3 (bg.transform.position.x, bg.transform.position.y + (SpriteHight * bgs.Length) * 0.88f, 0);
+			}
 		}
-		if (bg2.transform.position.y + SpriteHight / 2 < BorderDown.transform.position.y) {
-			bg2.transform.position = new Vector3 (bg2.transform.position.x, (bg1.transform.position.y + SpriteHight * 0.88f), 0);
-		}
+
 	}
 }

@@ -8,8 +8,12 @@ public class GameController : MonoBehaviour {
     public int CurrentHeight;
     //Anzahl an Tiefseehintergründen, wie oft sie wiederholt werden sollen
     public int DeepSeaNumber;
+    //deep to mid
+    public int DeepToMid;
     // Midsee Number
     public int MidseeNumber;
+    //mid to normal
+    public int MidToSee;
     // Anzahl an Seehintergründen
     public int SeeNumber;
     // Oberfläche = 1
@@ -17,8 +21,6 @@ public class GameController : MonoBehaviour {
     // Himmel
     public int SkyeNumber;
     // darkskye
-    public int DarkskyNumber;
-    // Übergang Himmel zu Weltall
     public int SkyeToSpaceNumber;
     // Weltall
     public int SpaceNumber;
@@ -42,12 +44,13 @@ public class GameController : MonoBehaviour {
 
     void Awake()
     {
-        MidseeNumber = DeepSeaNumber + MidseeNumber;
+        DeepToMid = DeepSeaNumber + DeepToMid;
+        MidseeNumber = DeepToMid + MidseeNumber;
+        MidToSee = MidseeNumber + MidToSee;
         SeeNumber = MidseeNumber + SeeNumber;
         SurfaceNumber = SeeNumber + SurfaceNumber;
         SkyeNumber = SurfaceNumber + SkyeNumber;
-        DarkskyNumber = SkyeNumber + DarkskyNumber;
-        SkyeToSpaceNumber = DarkskyNumber + SkyeToSpaceNumber;
+        SkyeToSpaceNumber = SkyeNumber + SkyeToSpaceNumber;
     }
 
 

@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour {
   public List<GameObject> EnemyList;
   public bool EnemyCanMove = false;
   public GameObject enemy;
-  private float spawnTime = 2f;
 
   private static EnemyController instance = null;
   public static EnemyController Instance
@@ -25,7 +24,6 @@ public class EnemyController : MonoBehaviour {
   // Use this for initialization
   void Start () {
     CreateEnemies();
-    EnableEnemies();
   }
 
   private void CreateEnemies() {
@@ -59,9 +57,9 @@ public class EnemyController : MonoBehaviour {
 
         Vector3 cp;
         if (EnemyList[i].GetComponent<EnemyMovement>().side == 0) {
-          cp = new Vector3(0, Random.Range(Screen.height*2/3, Screen.height), 0);
+          cp = new Vector3(0, Random.Range(Screen.height*2/3, Screen.height - Screen.height*1/5), 0);
         } else {
-          cp = new Vector3(Screen.width, Random.Range(Screen.height*2/3, Screen.height), 0);
+          cp = new Vector3(Screen.width, Random.Range(Screen.height*2/3, Screen.height - Screen.height*1/5), 0);
         }
         Vector3 wp = Camera.main.ScreenToWorldPoint(cp);
         wp.z = 0;

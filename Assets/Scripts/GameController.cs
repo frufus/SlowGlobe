@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour {
         {
             Timer = Timer + Time.deltaTime;
         }
-        TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s  vor Trouble beschützt.";
+        TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s vor Trouble beschützt.";
 
     }
 

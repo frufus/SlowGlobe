@@ -20,17 +20,17 @@ public class MouseController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(1)) {
 			mouseDown = true;
 		}
-		if (Input.GetMouseButtonDown(1)) {
+		if (Input.GetMouseButtonDown(0)) {
 			rightMouseDown = true;
 		}
 
-		if (Input.GetMouseButtonUp(0)) {
+		if (Input.GetMouseButtonUp(1)) {
 			mouseDown = false;
 		}
-		if (Input.GetMouseButtonUp(1)) {
+		if (Input.GetMouseButtonUp(0)) {
 			rightMouseDown = false;
 		}
 
@@ -41,16 +41,17 @@ public class MouseController : MonoBehaviour {
 		if (mouseDown || rightMouseDown) {
 			Collider2D[] hitColliders = Physics2D.OverlapCircleAll(new Vector2(wm.x, wm.y), 2);
 			foreach (Collider2D col in hitColliders) {
-				if (rightMouseDown) {
-                    if(col.GetComponent<EnemyMovement>() != null)
-					    col.GetComponent<EnemyMovement>().inAccelRadius = true;
-				}
-				if (mouseDown) {
-                    if (col.GetComponent<EnemyMovement>() != null)
-                        col.GetComponent<EnemyMovement>().inSlomoRadius = true;
-				}
 				if (slowmoTime > 1) {
-					slowmoTime -= slowmoCostPerTick;
+					if (rightMouseDown) {
+	                    if(col.GetComponent<EnemyMovement>() != null)
+						    col.GetComponent<EnemyMovement>().inAccelRadius = true;
+					}
+					if (mouseDown) {
+	                    if (col.GetComponent<EnemyMovement>() != null)
+	                        col.GetComponent<EnemyMovement>().inSlomoRadius = true;
+					}
+
+						slowmoTime -= slowmoCostPerTick;
 				}
 			}
 		} else {

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    public float Timer = 0;
     public GameObject Bubble;
     public GameObject GameOverGO;
     public GameObject Background;
@@ -27,6 +29,9 @@ public class GameController : MonoBehaviour {
     public int SkyeToSpaceNumber;
     // Weltall
     public int SpaceNumber;
+
+    private bool pauseTimer = false;
+    public Text TimerText;
 
 
    
@@ -68,6 +73,17 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (!pauseTimer)
+        {
+            Timer = Timer + Time.deltaTime;
+        }
+        TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s  vor Trouble beschützt.";
+
+    }
+
+    public void PauseTimer()
+    {
+        pauseTimer = true;
+        
+    }
 }

@@ -18,6 +18,7 @@ public class CollisionControll : MonoBehaviour {
         if(coll.tag == "Player")
         {
             GameController.Instance.Bubble.GetComponent<Animator>().SetTrigger("CollidedWithEnemy");
+            GameController.Instance.PauseTimer();
             StartCoroutine(StartGameOverStreen(.5f));
         }
             

@@ -19,6 +19,7 @@ public class StartMenu : MonoBehaviour {
     
     public void StartGame()
     {
+        Debug.Log("Knopf gedrückt");
         SceneManager.LoadScene(1);
     }
 }

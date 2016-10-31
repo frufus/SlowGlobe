@@ -36,7 +36,7 @@ public class FishMovement : EnemyMovement {
     else
     {
       if(canMove) {
-        transform.Translate(new Vector3((movement.direction.x * movement.speed), movement.direction.y * 0.1f, 0));
+        transform.Translate(new Vector3((movement.direction.x * movement.speed), movement.direction.y * 0.2f, 0));
       }
     }
   }

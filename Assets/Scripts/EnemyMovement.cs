@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour {
   void applySlowmo() {
     float speedMod = 1f;
     if (isSlowed) {
-      speedMod -= 0.6f;
+      speedMod -= 0.7f;
     }
     if (isAcceled) {
       speedMod += 0.5f;

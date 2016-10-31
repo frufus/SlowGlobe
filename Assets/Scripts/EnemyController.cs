@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
   private void SpawnEnemies() {
-    rndNumberOfEnemyList = Random.Range(0, 3);
+    rndNumberOfEnemyList = Random.Range(1, 2);
     int count = 0;
     for (int i = 0; i < EnemyList.Count; i++)
     {

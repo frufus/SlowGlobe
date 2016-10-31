@@ -80,6 +80,10 @@ public class GameController : MonoBehaviour {
         TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s vor Trouble beschützt.";
 
     }
+    public void Win()
+    {
+        TimerText.text = "Du hast die Babbel so lange wie möglich beschützt. Leider ist hier kein Sauerstoff mehr.";
+    }
 
     public void PauseTimer()
     {

@@ -34,8 +34,9 @@ public class ThunderMovement : EnemyMovement {
     }
     else
     {
-      if(canMove) {
-        transform.Translate(movement.direction * movement.speed);
+      if(canMove)
+      {
+                transform.Translate(new Vector3((movement.direction.x * movement.speed), movement.direction.y * 0.2f, 0));
       }
     }
   }

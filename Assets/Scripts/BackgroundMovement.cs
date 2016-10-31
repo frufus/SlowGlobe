@@ -129,13 +129,13 @@ public class BackgroundMovement : MonoBehaviour
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[7];
             thunderController.GetComponent<EnemyController>().EnableEnemies();
         }
-        else if (currentStage >= GameController.Instance.SpaceNumber && currentStage< GameController.Instance.SpaceNumber + 3)
+        else if (currentStage >= GameController.Instance.SpaceNumber && currentStage < 15)
         {
             if (BackGroundSprites.Count != 0)
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[8];
             rocketController.GetComponent<EnemyController>().EnableEnemies();
         }
-        else
+        else if (currentStage >= 15)
         {
             GameController.Instance.Bubble.GetComponent<Animator>().SetTrigger("CollidedWithEnemy");
             GameController.Instance.PauseTimer();
@@ -150,7 +150,7 @@ public class BackgroundMovement : MonoBehaviour
         yield return new WaitForSeconds(waitseconds);
         GameController.Instance.Background.GetComponent<BackgroundMovement>().enabled = false;
         GameController.Instance.GameOverGO.SetActive(true);
-        GameController.Instance.Win();
+        GameController.Instance.win = true;
         Cursor.visible = true;
     }
 

@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour {
 
     private bool pauseTimer = false;
     public Text TimerText;
+    public bool win;
 
 
    
@@ -77,13 +78,13 @@ public class GameController : MonoBehaviour {
         {
             Timer = Timer + Time.deltaTime;
         }
-        TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s vor Trouble beschützt.";
+        if(!win)
+            TimerText.text = "Du hast die Babbel " + Timer.ToString("n2") +  "s vor Trouble beschützt.";
+        if(win)
+            TimerText.text = "Du hast die Babbel so lange wie möglich beschützt.";
 
     }
-    public void Win()
-    {
-        TimerText.text = "Du hast die Babbel so lange wie möglich beschützt. Leider ist hier kein Sauerstoff mehr.";
-    }
+   
 
     public void PauseTimer()
     {

@@ -129,18 +129,33 @@ public class BackgroundMovement : MonoBehaviour
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[7];
             thunderController.GetComponent<EnemyController>().EnableEnemies();
         }
-        else if (currentStage >= GameController.Instance.SpaceNumber)
+        else if (currentStage >= GameController.Instance.SpaceNumber && currentStage < 15)
         {
             if (BackGroundSprites.Count != 0)
                 BackGroundGO.GetComponent<SpriteRenderer>().sprite = BackGroundSprites[8];
             rocketController.GetComponent<EnemyController>().EnableEnemies();
         }
+        else if (currentStage >= 15)
+        {
+            GameController.Instance.Bubble.GetComponent<Animator>().SetTrigger("CollidedWithEnemy");
+            GameController.Instance.PauseTimer();
+            StartCoroutine(StartGameOverStreen(.5f));
+        }
+
 
 
     }
+    private IEnumerator StartGameOverStreen(float waitseconds)
+    {
+        yield return new WaitForSeconds(waitseconds);
+        GameController.Instance.Background.GetComponent<BackgroundMovement>().enabled = false;
+        GameController.Instance.GameOverGO.SetActive(true);
+        GameController.Instance.win = true;
+        Cursor.visible = true;
+    }
 
 
-	void MoveBackground (GameObject[] bgs, float off, bool isBG)
+    void MoveBackground (GameObject[] bgs, float off, bool isBG)
 	{
 		SpriteHight = bgs[0].GetComponent<SpriteRenderer>().bounds.size.y;
 		int index = allStages;
